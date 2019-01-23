@@ -1,0 +1,389 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>用例执行情况</title>
+    <meta name="generator" content="HTMLTestRunner 0.8.2"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    
+<style type="text/css" media="screen">
+body        { font-family: verdana, arial, helvetica, sans-serif; font-size: 80%; }
+table       { font-size: 100%; }
+pre         { }
+
+/* -- heading ---------------------------------------------------------------------- */
+h1 {
+	font-size: 16pt;
+	color: gray;
+}
+.heading {
+    margin-top: 0ex;
+    margin-bottom: 1ex;
+}
+
+.heading .attribute {
+    margin-top: 1ex;
+    margin-bottom: 0;
+}
+
+.heading .description {
+    margin-top: 4ex;
+    margin-bottom: 6ex;
+}
+
+/* -- css div popup ------------------------------------------------------------------------ */
+a.popup_link {
+}
+
+a.popup_link:hover {
+    color: red;
+}
+
+.popup_window {
+    display: none;
+    position: relative;
+    left: 0px;
+    top: 0px;
+    /*border: solid #627173 1px; */
+    padding: 10px;
+    background-color: #E6E6D6;
+    font-family: "Lucida Console", "Courier New", Courier, monospace;
+    text-align: left;
+    font-size: 8pt;
+    width: 500px;
+}
+
+}
+/* -- report ------------------------------------------------------------------------ */
+#show_detail_line {
+    margin-top: 3ex;
+    margin-bottom: 1ex;
+}
+#result_table {
+    width: 80%;
+    border-collapse: collapse;
+    border: 1px solid #777;
+}
+#header_row {
+    font-weight: bold;
+    color: white;
+    background-color: #777;
+}
+#result_table td {
+    border: 1px solid #777;
+    padding: 2px;
+}
+#total_row  { font-weight: bold; }
+.passClass  { background-color: #6c6; }
+.failClass  { background-color: #c60; }
+.errorClass { background-color: #c00; }
+.passCase   { color: #6c6; }
+.failCase   { color: #c60; font-weight: bold; }
+.errorCase  { color: #c00; font-weight: bold; }
+.hiddenRow  { display: none; }
+.testcase   { margin-left: 2em; }
+
+
+/* -- ending ---------------------------------------------------------------------- */
+#ending {
+}
+
+</style>
+
+</head>
+<body>
+<script language="javascript" type="text/javascript"><!--
+output_list = Array();
+
+/* level - 0:Summary; 1:Failed; 2:All */
+function showCase(level) {
+    trs = document.getElementsByTagName("tr");
+    for (var i = 0; i < trs.length; i++) {
+        tr = trs[i];
+        id = tr.id;
+        if (id.substr(0,2) == 'ft') {
+            if (level < 1) {
+                tr.className = 'hiddenRow';
+            }
+            else {
+                tr.className = '';
+            }
+        }
+        if (id.substr(0,2) == 'pt') {
+            if (level > 1) {
+                tr.className = '';
+            }
+            else {
+                tr.className = 'hiddenRow';
+            }
+        }
+    }
+}
+
+
+function showClassDetail(cid, count) {
+    var id_list = Array(count);
+    var toHide = 1;
+    for (var i = 0; i < count; i++) {
+        tid0 = 't' + cid.substr(1) + '.' + (i+1);
+        tid = 'f' + tid0;
+        tr = document.getElementById(tid);
+        if (!tr) {
+            tid = 'p' + tid0;
+            tr = document.getElementById(tid);
+        }
+        id_list[i] = tid;
+        if (tr.className) {
+            toHide = 0;
+        }
+    }
+    for (var i = 0; i < count; i++) {
+        tid = id_list[i];
+        if (toHide) {
+            document.getElementById('div_'+tid).style.display = 'none'
+            document.getElementById(tid).className = 'hiddenRow';
+        }
+        else {
+            document.getElementById(tid).className = '';
+        }
+    }
+}
+
+
+function showTestDetail(div_id){
+    var details_div = document.getElementById(div_id)
+    var displayState = details_div.style.display
+    // alert(displayState)
+    if (displayState != 'block' ) {
+        displayState = 'block'
+        details_div.style.display = 'block'
+    }
+    else {
+        details_div.style.display = 'none'
+    }
+}
+
+
+function html_escape(s) {
+    s = s.replace(/&/g,'&amp;');
+    s = s.replace(/</g,'&lt;');
+    s = s.replace(/>/g,'&gt;');
+    return s;
+}
+
+/* obsoleted by detail in <div>
+function showOutput(id, name) {
+    var w = window.open("", //url
+                    name,
+                    "resizable,scrollbars,status,width=800,height=450");
+    d = w.document;
+    d.write("<pre>");
+    d.write(html_escape(output_list[id]));
+    d.write("\n");
+    d.write("<a href='javascript:window.close()'>close</a>\n");
+    d.write("</pre>\n");
+    d.close();
+}
+*/
+--></script>
+
+<div class='heading'>
+<h1>用例执行情况</h1>
+<p class='attribute'><strong>Start Time:</strong> 2019-01-23 10:08:01</p>
+<p class='attribute'><strong>Duration:</strong> 0:00:04.281000</p>
+<p class='attribute'><strong>Status:</strong> Pass 7</p>
+
+<p class='description'>金惠家理财接口:</p>
+</div>
+
+
+
+<p id='show_detail_line'>Show
+<a href='javascript:showCase(0)'>Summary</a>
+<a href='javascript:showCase(1)'>Failed</a>
+<a href='javascript:showCase(2)'>All</a>
+</p>
+<table id='result_table'>
+<colgroup>
+<col align='left' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+</colgroup>
+<tr id='header_row'>
+    <td>Test Group/Test case</td>
+    <td>Count</td>
+    <td>Pass</td>
+    <td>Fail</td>
+    <td>Error</td>
+    <td>View</td>
+</tr>
+
+<tr class='passClass'>
+    <td>testProductAPI.testProductAPI.TestUserAPI</td>
+    <td>7</td>
+    <td>7</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c1',7)">Detail</a></td>
+</tr>
+
+<tr id='pt1.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testHttpIndexProductList001: 智慧投列表</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.1')" >
+        pass</a>
+
+    <div id='div_pt1.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.1: 2019-01-23 10:08:02,944 -publicLogs.py - INFO: request:http://123.56.13.177:9090/hjlc-api/index/product/list?pageSize=100&amp;category=1&amp;page=1, response:{"code":200,"data":{"pageSize":10,"total":4,"page":1,"products":[{"baseRate":"6.0","buyStatus":"1","category":"1","currentStatus":"2","detailUrl":"","duration":1,"durationType":"M","expectYield":6.0,"id":9,"isGreenHand":"N","isMarketing":"N","marketingDesc":"","marketingDurationType":"","marketingName":"","name":"智惠投30+","preSale":false,"rate":"0.0","rateType":"1","recommend":"N","rollingRate":"0.2","sellBeginTime":"2018-04-01 00:00:00","sellEndTime":"2028-01-31 23:59:59","tag":"标签测试0.02%","transferFeeRate":0.000000},{"baseRate":"6.0","buyStatus":"1","category":"1","currentStatus":"2","detailUrl":"","duration":3,"durationType":"M","expectYield":7.0,"id":10,"isGreenHand":"N","isMarketing":"N","marketingDesc":"","marketingDuration":3,"marketingDurationType":"M","marketingName":"锁定期加息2%","marketingRate":3.000000,"name":"智惠投90+","preSale":false,"rate":"1.0","rateType":"2","recommend":"N","rollingRate":"0.5","sellBeginTime":"2018-04-01 00:00:00","sellEndTime":"2028-12-31 23:59:59","tag":"","transferFeeRate":0.000000},{"baseRate":"6.0","buyStatus":"1","category":"1","currentStatus":"2","detailUrl":"","duration":6,"durationType":"M","expectYield":7.5,"id":11,"isGreenHand":"N","isMarketing":"N","marketingDesc":"","marketingDurationType":"","marketingName":"","name":"智惠投180+","preSale":false,"rate":"1.5","rateType":"3","recommend":"N","rollingRate":"1.0","sellBeginTime":"2018-04-01 00:00:00","sellEndTime":"2028-12-31 23:59:59","tag":"","transferFeeRate":0.000000},{"baseRate":"6.0","buyStatus":"1","category":"1","currentStatus":"2","detailUrl":"","duration":12,"durationType":"M","expectYield":8.5,"id":13,"isGreenHand":"N","isMarketing":"N","marketingDesc":"","marketingDurationType":"","marketingName":"","name":"智惠投365+","preSale":false,"rate":"2.5","rateType":"4","recommend":"N","rollingRate":"0.0","sellBeginTime":"2018-04-01 00:00:00","sellEndTime":"2028-12-31 23:59:59","tag":"","transferFeeRate":0.000000}]},"msg":"success","timestamp":1548209266387} 
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.2' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testHttpIndexProductList002: 直投列表</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.2')" >
+        pass</a>
+
+    <div id='div_pt1.2' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.2').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.2: 2019-01-23 10:08:03,586 -publicLogs.py - INFO: request:http://123.56.13.177:9090/hjlc-api/index/product/list?pageSize=100&amp;category=2&amp;page=1, response:{"code":200,"data":{"pageSize":10,"total":1,"page":1,"products":[{"baseRate":"6.000000","buyStatus":"1","category":"2","currentStatus":"8","detailUrl":"","duration":12,"durationType":"M","endTime":"2020-12-12 00:00:00","id":497,"isGreenHand":"N","isMarketing":"N","marketingDesc":"","marketingDurationType":"","marketingName":"","name":"立刻上架","preSale":false,"rate":"2.880000","rateType":"","recommend":"N","rollingRate":"","sellBeginTime":"2019-01-14 15:34:31","sellEndTime":"2019-02-03 15:34:31","tag":"","transferFeeRate":0.000000}]},"msg":"success","timestamp":1548209267028} 
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.3' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testHttpProductDetail: 智慧投出借详情</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.3')" >
+        pass</a>
+
+    <div id='div_pt1.3' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.3').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.3: 2019-01-23 10:08:04,362 -publicLogs.py - INFO: request:http://123.56.13.177:9090/hjlc-api/product/detail?id=9, response:{"code":200,"data":{"baseRate":"6.0","category":"","charts":[6.0,6.2,6.4,6.6,6.8,7.0,7.2,7.4,7.6,7.8,8.0,8.2,8.2],"clearingDate":"","code":"","currentStatus":2,"dailyMaxTotalInvestAmount":10000000.000000,"duration":1,"durationType":"M","endDate":"2019-02-23","exitRule":"&lt;p&gt;&lt;span style=\"font-family: 宋体;\"&gt;授权服务期结束前3天为退出开放期，用户可申请债权转让退出。若用户未申请退出，将自动续期1个服务期（续约期）。&lt;span style=\"font-family: 宋体;\"&gt;首个授权服务期内不允许提前退出，续约期内提前退出，按本金的1%收取提前退出手续费。&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;","exitWay":"提前3天申请转让退出","expectYield":6.0,"id":9,"incAmount":1.0,"incYield":0.2,"increasedInterestRate":0.0,"interestRate":0.0,"inventoryAmount":66713.6,"investAmount":100.0,"investCount":12,"isGreenHand":"N","isMarketing":"N","isSelling":"Y","lockDate":"2019-02-19","marketingDesc":"","marketingDurationType":"","marketingName":"","maxSingleInvestAmount":100000.0,"maxTotalInvestAmount":1.0E7,"name":"智惠投30+","openDate":"2019-02-20","preSale":false,"rate":"0.0","rateType":"1","recommend":"N","rollingRate":"0.2","sellBeginTime":"2018-04-01 00:00:00","sellEndTime":1832947199000,"startDate":"2019-01-23","surplusAmount":3900.0,"tag":"标签测试0.02%","tenThousandIncome":600.0,"transferFeeRate":0.000000,"userMaxTotalInvestAmount":10000000.000000},"msg":"success","timestamp":1548209267799} 
+2019-01-23 10:08:04,480 -publicLogs.py - INFO: request:http://123.56.13.177:9090/hjlc-api/product/detail?id=10, response:{"code":200,"data":{"baseRate":"6.0","category":"","charts":[7.0,7.5,8.0,8.5,8.5],"clearingDate":"","code":"","currentStatus":2,"dailyMaxTotalInvestAmount":10000000.000000,"duration":3,"durationType":"M","endDate":"2019-04-23","exitRule":"&lt;p&gt;&lt;span style=\"font-family: 宋体;\"&gt;授权服务期结束前3天为退出开放期，用户可申请债权转让退出。若用户未申请退出，将自动续期1个服务期（续约期）。&lt;/span&gt;&lt;span style=\"font-family: 宋体;\"&gt;首个授权服务期内不允许提前退出，续约期内提前退出，按本金的1%收取提前退出手续费。&lt;/span&gt;&lt;/p&gt;","exitWay":"提前3天申请转让退出","expectYield":7.0,"id":10,"incAmount":1.0,"incYield":0.5,"increasedInterestRate":0.0,"interestRate":0.0,"inventoryAmount":0.0,"investAmount":100.0,"investCount":11,"isGreenHand":"N","isMarketing":"N","isSelling":"Y","lockDate":"2019-04-19","marketingDesc":"","marketingDuration":3,"marketingDurationType":"M","marketingName":"锁定期加息2%","marketingRate":3.000000,"maxSingleInvestAmount":100000.0,"maxTotalInvestAmount":1.0E7,"name":"智惠投90+","openDate":"2019-04-20","preSale":false,"rate":"1.0","rateType":"2","recommend":"N","rollingRate":"0.5","sellBeginTime":"2018-04-01 00:00:00","sellEndTime":1861891199000,"startDate":"2019-01-23","surplusAmount":3900.0,"tag":"","tenThousandIncome":700.0,"transferFeeRate":0.000000,"userMaxTotalInvestAmount":100000.000000},"msg":"success","timestamp":1548209267923} 
+2019-01-23 10:08:04,591 -publicLogs.py - INFO: request:http://123.56.13.177:9090/hjlc-api/product/detail?id=11, response:{"code":200,"data":{"baseRate":"6.0","category":"","charts":[7.5,8.5,8.5],"clearingDate":"","code":"","currentStatus":2,"dailyMaxTotalInvestAmount":10000000.000000,"duration":6,"durationType":"M","endDate":"2019-07-23","exitRule":"&lt;p&gt;&lt;span style=\"font-family: 宋体;\"&gt;授权服务期结束前3天为退出开放期，用户可申请债权转让退出。若用户未申请退出，将自动续期1个服务期（续约期）。&lt;/span&gt;&lt;span style=\"font-family: 宋体;\"&gt;首个授权服务期内不允许提前退出，续约期内提前退出，按本金的1.5%收取提前退出手续费。&lt;/span&gt;&lt;/p&gt;","exitWay":"提前3天申请转让退出","expectYield":7.5,"id":11,"incAmount":1.0,"incYield":1.0,"increasedInterestRate":0.0,"interestRate":0.0,"inventoryAmount":0.0,"investAmount":100.0,"investCount":7,"isGreenHand":"N","isMarketing":"N","isSelling":"Y","lockDate":"2019-07-19","marketingDesc":"","marketingDurationType":"","marketingName":"","maxSingleInvestAmount":100000.0,"maxTotalInvestAmount":1.0E7,"name":"智惠投180+","openDate":"2019-07-20","preSale":false,"rate":"1.5","rateType":"3","recommend":"N","rollingRate":"1.0","sellBeginTime":"2018-04-01 00:00:00","sellEndTime":1861891199000,"startDate":"2019-01-23","surplusAmount":3900.0,"tag":"","tenThousandIncome":750.0,"transferFeeRate":0.000000,"userMaxTotalInvestAmount":100000.000000},"msg":"success","timestamp":1548209268033} 
+2019-01-23 10:08:04,703 -publicLogs.py - INFO: request:http://123.56.13.177:9090/hjlc-api/product/detail?id=13, response:{"code":200,"data":{"baseRate":"6.0","category":"","charts":[8.5,8.5],"clearingDate":"","code":"","currentStatus":2,"dailyMaxTotalInvestAmount":10000000.000000,"duration":12,"durationType":"M","endDate":"2020-01-23","exitRule":"&lt;p&gt;&lt;span style=\"font-family: 宋体;\"&gt;授权服务期结束前3天为退出开放期，用户可申请债权转让退出。若用户未申请退出，将自动续期1个服务期（续约期）。&lt;/span&gt;&lt;span style=\"font-family: 宋体;\"&gt;首个授权服务期内不允许提前退出，续约期内提前退出，按本金的1.5%收取提前退出手续费。&lt;/span&gt;&lt;/p&gt;","exitWay":"提前3天申请转让退出","expectYield":8.5,"id":13,"incAmount":1.0,"incYield":0.0,"increasedInterestRate":0.0,"interestRate":0.0,"inventoryAmount":0.0,"investAmount":1.0,"investCount":6,"isGreenHand":"N","isMarketing":"N","isSelling":"Y","lockDate":"2020-01-19","marketingDesc":"","marketingDurationType":"","marketingName":"","maxSingleInvestAmount":100000.0,"maxTotalInvestAmount":1.0E7,"name":"智惠投365+","openDate":"2020-01-20","preSale":false,"rate":"2.5","rateType":"4","recommend":"N","rollingRate":"0.0","sellBeginTime":"2018-04-01 00:00:00","sellEndTime":1861891199000,"startDate":"2019-01-23","surplusAmount":3900.0,"tag":"","tenThousandIncome":850.0,"transferFeeRate":0.000000},"msg":"success","timestamp":1548209268144} 
+2019-01-23 10:08:04,815 -publicLogs.py - INFO: request:http://123.56.13.177:9090/hjlc-api/product/detail?id=16, response:{"code":200,"data":{"baseRate":"6.0","category":"","charts":[6.0,6.2,6.4,6.6,6.8,7.0,7.2,7.4,7.6,7.8,8.0,8.2,8.2],"clearingDate":"","code":"","currentStatus":2,"dailyMaxTotalInvestAmount":1000000.000000,"duration":1,"durationType":"M","endDate":"2019-01-30","exitRule":"&lt;p&gt;新手专享新手专享&lt;/p&gt;","exitWay":"锁定期后随时退出","expectYield":6.0,"id":16,"incAmount":1.0,"incYield":0.2,"increasedInterestRate":0.0,"interestRate":0.0,"inventoryAmount":0.0,"investAmount":1.0,"investCount":1,"investTimeLimitCert":3,"investTimeLimitUid":1,"isGreenHand":"Y","isMarketing":"Y","isSelling":"Y","lockDate":"2019-01-28","marketingDesc":"新手老优惠了，不买瞅啥呢！","marketingDuration":7,"marketingDurationType":"D","marketingName":"智惠投30 +  (新手转入)","marketingRate":13.000000,"maxSingleInvestAmount":100000.0,"maxTotalInvestAmount":1.0E7,"name":"新手专享","openDate":"2019-01-29","preSale":false,"rate":"0.0","rateType":"1","recommend":"N","rollingRate":"0.2","sellBeginTime":"2018-03-31 00:00:00","sellEndTime":1640447999000,"startDate":"2019-01-23","surplusAmount":3900.0,"tag":"","tenThousandIncome":600.0,"transferFeeRate":0.000000,"userMaxTotalInvestAmount":1000000.000000},"msg":"success","timestamp":1548209268258} 
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.4' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testHttpProductDetailWithAccount: 授权出借</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt1.5' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testHttpProductDirectDetail: 直投出借详情</div></td>
+    <td colspan='5' align='center'>pass</td>
+</tr>
+
+<tr id='pt1.6' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testHttpProductGreenHand: 活动推荐</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.6')" >
+        pass</a>
+
+    <div id='div_pt1.6' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.6').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.6: 2019-01-23 10:08:05,270 -publicLogs.py - INFO: request:http://123.56.13.177:9090/hjlc-api/product/greenHand, response:{"code":200,"data":{"recommendProducts":[],"greenHandProducts":[{"balance":3900.00,"baseRate":"","category":"1","currentStatus":"1","duration":7,"durationType":"D","marketingRate":"13.000000","productId":"16","productName":"新手专享","rate":"6.0","rollingRate":""}]},"msg":"success","timestamp":1548209268710} 
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.7' class='hiddenRow'>
+    <td class='none'><div class='testcase'>testHttpProductInvestList: 投资记录</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.7')" >
+        pass</a>
+
+    <div id='div_pt1.7' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.7').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.7: 2019-01-23 10:08:05,901 -publicLogs.py - INFO: request:http://123.56.13.177:9090/hjlc-api/product/invest/list?id=9&amp;page=1&amp;pageSize=100, response:{"code":200,"data":{"pageSize":10,"total":31,"page":1,"list":[{"amount":50700.0,"mobile":"136******24","tradeTime":"2019-01-21 16:58:46","userId":496486051456618496},{"amount":50700.0,"mobile":"177******02","tradeTime":"2019-01-21 17:08:21","userId":549639819991584768},{"amount":50000.0,"mobile":"177******46","tradeTime":"2019-01-15 09:40:44","userId":543942096491515904},{"amount":50000.0,"mobile":"170******50","tradeTime":"2019-01-21 16:27:18","userId":604827381340966912},{"amount":42200.0,"mobile":"177******07","tradeTime":"2019-01-15 14:22:50","userId":550014400690524160},{"amount":20000.0,"mobile":"170******00","tradeTime":"2019-01-21 10:17:01","userId":412676566376648704},{"amount":12300.0,"mobile":"177******07","tradeTime":"2019-01-10 15:09:39","userId":550014400690524160},{"amount":11700.0,"mobile":"170******88","tradeTime":"2019-01-11 14:56:53","userId":526885704383467520},{"amount":11600.0,"mobile":"170******10","tradeTime":"2019-01-14 17:10:11","userId":588503608979492864},{"amount":11400.0,"mobile":"170******10","tradeTime":"2019-01-14 15:55:20","userId":588503608979492864}],"first":{"amount":73900.0,"mobile":"177******02","tradeTime":"2019-01-21 10:12:15","userId":549639819991584768}},"msg":"success","timestamp":1548209269342} 
+2019-01-23 10:08:05,986 -publicLogs.py - INFO: request:http://123.56.13.177:9090/hjlc-api/product/invest/list?id=10&amp;page=1&amp;pageSize=100, response:{"code":200,"data":{"pageSize":10,"total":15,"page":1,"list":[{"amount":30200.0,"mobile":"177******46","tradeTime":"2019-01-15 11:52:50","userId":543942096491515904},{"amount":23400.0,"mobile":"170******80","tradeTime":"2019-01-10 15:39:13","userId":600827187897176064},{"amount":16000.0,"mobile":"170******00","tradeTime":"2019-01-21 10:17:28","userId":412676566376648704},{"amount":11000.0,"mobile":"177******02","tradeTime":"2019-01-21 10:12:41","userId":549639819991584768},{"amount":10500.0,"mobile":"170******10","tradeTime":"2019-01-15 10:30:19","userId":588503608979492864},{"amount":10100.0,"mobile":"170******88","tradeTime":"2019-01-18 10:42:53","userId":526885704383467520},{"amount":10000.0,"mobile":"170******80","tradeTime":"2019-01-10 14:49:37","userId":600822268930691072},{"amount":10000.0,"mobile":"189******00","tradeTime":"2019-01-15 10:44:07","userId":493909198648774656},{"amount":10000.0,"mobile":"170******88","tradeTime":"2019-01-15 10:08:11","userId":526885704383467520},{"amount":10000.0,"mobile":"170******80","tradeTime":"2019-01-10 15:38:18","userId":600827187897176064}],"first":{"amount":33400.0,"mobile":"170******80","tradeTime":"2019-01-10 15:38:18","userId":600827187897176064}},"msg":"success","timestamp":1548209269428} 
+2019-01-23 10:08:06,075 -publicLogs.py - INFO: request:http://123.56.13.177:9090/hjlc-api/product/invest/list?id=11&amp;page=1&amp;pageSize=100, response:{"code":200,"data":{"pageSize":10,"total":8,"page":1,"list":[{"amount":30000.0,"mobile":"189******00","tradeTime":"2019-01-15 10:46:08","userId":493909198648774656},{"amount":14400.0,"mobile":"170******00","tradeTime":"2019-01-21 10:18:21","userId":412676566376648704},{"amount":13000.0,"mobile":"177******02","tradeTime":"2019-01-21 10:13:01","userId":549639819991584768},{"amount":10600.0,"mobile":"170******10","tradeTime":"2019-01-15 09:47:41","userId":588503608979492864},{"amount":10200.0,"mobile":"170******88","tradeTime":"2019-01-18 10:43:12","userId":526885704383467520},{"amount":10000.0,"mobile":"170******80","tradeTime":"2019-01-10 14:44:15","userId":600815111044730880},{"amount":6100.0,"mobile":"177******03","tradeTime":"2019-01-22 15:44:08","userId":549655146729181184},{"amount":1200.0,"mobile":"189******00","tradeTime":"2019-01-21 17:53:14","userId":493909198648774656}],"first":{"amount":31200.0,"mobile":"189******00","tradeTime":"2019-01-15 10:46:08","userId":493909198648774656}},"msg":"success","timestamp":1548209269516} 
+2019-01-23 10:08:06,167 -publicLogs.py - INFO: request:http://123.56.13.177:9090/hjlc-api/product/invest/list?id=13&amp;page=1&amp;pageSize=100, response:{"code":200,"data":{"pageSize":10,"total":7,"page":1,"list":[{"amount":20200.0,"mobile":"170******88","tradeTime":"2019-01-18 10:43:31","userId":526885704383467520},{"amount":16100.0,"mobile":"177******02","tradeTime":"2019-01-21 10:13:20","userId":549639819991584768},{"amount":16000.0,"mobile":"170******00","tradeTime":"2019-01-21 11:32:31","userId":412676566376648704},{"amount":10780.0,"mobile":"170******88","tradeTime":"2019-01-15 10:20:25","userId":526885704383467520},{"amount":4000.0,"mobile":"177******03","tradeTime":"2019-01-22 15:43:49","userId":549655146729181184},{"amount":3800.0,"mobile":"170******17","tradeTime":"2019-01-21 15:54:30","userId":604795310677561344},{"amount":1000.0,"mobile":"170******10","tradeTime":"2019-01-15 10:57:59","userId":588503608979492864}],"first":{"amount":30980.0,"mobile":"170******88","tradeTime":"2019-01-15 10:20:25","userId":526885704383467520}},"msg":"success","timestamp":1548209269607} 
+2019-01-23 10:08:06,256 -publicLogs.py - INFO: request:http://123.56.13.177:9090/hjlc-api/product/invest/list?id=16&amp;page=1&amp;pageSize=100, response:{"code":200,"data":{"pageSize":10,"total":1,"page":1,"list":[{"amount":1700.0,"mobile":"170******17","tradeTime":"2019-01-21 13:57:04","userId":604795310677561344}],"first":{"amount":1700.0,"mobile":"170******17","tradeTime":"2019-01-21 13:57:04","userId":604795310677561344}},"msg":"success","timestamp":1548209269699} 
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='total_row'>
+    <td>Total</td>
+    <td>7</td>
+    <td>7</td>
+    <td>0</td>
+    <td>0</td>
+    <td>&nbsp;</td>
+</tr>
+</table>
+
+<div id='ending'>&nbsp;</div>
+
+</body>
+</html>
